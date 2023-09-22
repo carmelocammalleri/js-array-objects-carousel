@@ -3,7 +3,6 @@
 const imageWrapper = document.querySelector('.image-wrap');
 const btnUp = document.querySelector('.arrow-up');
 const btnDown = document.querySelector('.arrow-down');
-
 // bonus
 const thumbNail = document.querySelector('.thumb')
 
@@ -18,16 +17,19 @@ const listImages = [
 
 //5. creare contatore
 let counter = 0;
+printImg ()
 
 //4. inserire img dentro html
-for(let i=0; i< listImages.length; i++){
-  const image = listImages[i];
-
-  // 7.condizioni bonus
-  thumbNail.innerHTML += `<div class="thumb-img"><img src="${image}" class=" item-thumb"></div>`
+function printImg (){
+  for(let i=0; i< listImages.length; i++){
+    const image = listImages[i];
   
-  //8. stampa codice
-  imageWrapper.innerHTML += `<img src="${image}" class= " item hide">`;
+    // 7.condizioni bonus
+    thumbNail.innerHTML += `<div class="thumb-img"><img src="${image}" class=" item-thumb"></div>`
+  
+    //8. stampa codice
+    imageWrapper.innerHTML += `<img src="${image}" class= " item hide">`;
+  }
 }
 
 //6.
