@@ -74,6 +74,11 @@
   height: 20%;
 }
 
+.thumb-img .active {
+  border: 1.5px solid white;
+  opacity: 1;
+}
+
 .thumb {
   width: 20%;
   height: 100%;
@@ -90,10 +95,6 @@
   opacity: .5;
 }
 
-.active {
-  border: 1.5px solid white;
-  opacity: 1;
-}
 
 #info {
   position: absolute;

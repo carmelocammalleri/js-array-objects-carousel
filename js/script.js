@@ -41,7 +41,7 @@ function printImg (){
   listImages.forEach((info)=>{
     
     // 7.condizioni bonus
-    thumbNail.innerHTML += `<div class="thumb-img"><img src="${info.image}" class=" item-thumb"></div>`
+    thumbNail.innerHTML += `<div class="thumb-img"><img class="active hide" src="${info.image}" class=" item-thumb"></div>`
     
     //8. stampa codice
     imageWrapper.innerHTML += `<img src="${info.image}" class= " item hide">`;
@@ -57,24 +57,29 @@ function printImg (){
 
 //6.
 const itemHide = document.getElementsByClassName('item');
+const active = document.getElementsByClassName('active');
 const textInfo = document.getElementsByClassName('text');
 itemHide[counter].classList.remove('hide');
+active[counter].classList.remove('hide')
 textInfo[counter].classList.remove('hide');
 
 console.log(textInfo[counter]);
 btnDown.addEventListener('click', function (){
   itemHide[counter].classList.add('hide');
+  active[counter].classList.add('hide');
   textInfo[counter].classList.add('hide');
   counter++;
   if(counter === itemHide.length){
     counter=0
   }
   itemHide[counter].classList.remove('hide');
+  active[counter].classList.remove('hide');
   textInfo[counter].classList.remove('hide');
 })
 
 btnUp.addEventListener('click', function(){
   itemHide[counter].classList.add('hide');
+  active[counter].classList.add('hide')
   textInfo[counter].classList.add('hide');
   if(counter === 0){
     counter= itemHide.length
@@ -82,5 +87,6 @@ btnUp.addEventListener('click', function(){
   counter--;
   
   itemHide[counter].classList.remove('hide');
+  active[counter].classList.remove('hide');
   textInfo[counter].classList.remove('hide');
 })
