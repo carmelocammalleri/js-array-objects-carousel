@@ -23,6 +23,9 @@ let counter = 0;
 for(let i=0; i< listImages.length; i++){
   const image = listImages[i];
 
+  // 7.condizioni bonus
+  thumbNail.innerHTML += `<div class="thumb-img"><img src="${image}" class=" item-thumb"></div>`
+  
   //8. stampa codice
   imageWrapper.innerHTML += `<img src="${image}" class= " item hide">`;
 }
@@ -39,7 +42,7 @@ btnDown.addEventListener('click', function (){
   if(counter === itemHide.length){
     counter=0
   }
-
+  
   itemHide[counter].classList.remove('hide');
 })
 
@@ -55,11 +58,4 @@ btnUp.addEventListener('click', function(){
 
 })
 
-// 7.condizioni bonus
-for(let i=0; i< listImages.length; i++){
-  const image = listImages[i];
-
-  //8. stampa codice
-  thumbNail.innerHTML += `<div class="thumb-img"><img src="${image}" class=" item-thumb"></div>`
-}
-
+const img = document.querySelector('img')
