@@ -57,13 +57,18 @@ function printImg (){
 const itemHide = document.getElementsByClassName('item');
 itemHide[counter].classList.remove('hide');
 
+const infoTextGame = document.getElementsByClassName('text')
+infoTextGame[counter].classList.add('hide');
+
 btnDown.addEventListener('click', function (){
+
   itemHide[counter].classList.add('hide');
   
   counter++;
   if(counter === itemHide.length){
     counter=0
   }
+  infoTextGame[counter].classList.remove('hide');
   
   itemHide[counter].classList.remove('hide');
 })
