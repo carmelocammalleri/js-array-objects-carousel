@@ -2,7 +2,7 @@
 const imageWrapper = document.querySelector('.image-wrap');
 const btnUp = document.querySelector('.arrow-up');
 const btnDown = document.querySelector('.arrow-down');
-const infoGames= document.querySelector('.info')
+const infoGames= document.getElementById('info');
 
 // bonus
 const thumbNail = document.querySelector('.thumb')
@@ -39,14 +39,17 @@ printImg ()
 //4. inserire img dentro html
 function printImg (){
   listImages.forEach((info)=>{
-    infoGames.innerHTML +=`<span class="title">${info.title}</span><br><span>${info.text}</span>`
+
+    infoGames.innerHTML +=
+    `<span class="title">${info.title}</span>
+    <br>
+    <span>${info.text}</span>`
 
     // 7.condizioni bonus
     thumbNail.innerHTML += `<div class="thumb-img"><img src="${info.image}" class=" item-thumb"></div>`
   
     //8. stampa codice
     imageWrapper.innerHTML += `<img src="${info.image}" class= " item hide">`;
-    
   })
 }
 
@@ -54,9 +57,9 @@ function printImg (){
 const itemHide = document.getElementsByClassName('item');
 itemHide[counter].classList.remove('hide');
 
-
 btnDown.addEventListener('click', function (){
   itemHide[counter].classList.add('hide');
+  
   counter++;
   if(counter === itemHide.length){
     counter=0

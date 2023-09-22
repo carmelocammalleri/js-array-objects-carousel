@@ -95,7 +95,7 @@
   opacity: 1;
 }
 
-.info {
+#info {
   position: absolute;
   width: 79%;
   color: white;
@@ -107,3 +107,4 @@
   font-size: 1.3rem;
   font-weight: bold;
 }
+
