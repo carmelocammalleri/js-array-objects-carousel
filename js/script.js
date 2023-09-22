@@ -1,8 +1,9 @@
 // 2. collegare elementi html/js
-
 const imageWrapper = document.querySelector('.image-wrap');
 const btnUp = document.querySelector('.arrow-up');
 const btnDown = document.querySelector('.arrow-down');
+const infoGames= document.querySelector('.info')
+
 // bonus
 const thumbNail = document.querySelector('.thumb')
 
@@ -38,12 +39,14 @@ printImg ()
 //4. inserire img dentro html
 function printImg (){
   listImages.forEach((info)=>{
+    infoGames.innerHTML +=`<span class="title">${info.title}</span><br><span>${info.text}</span>`
 
     // 7.condizioni bonus
     thumbNail.innerHTML += `<div class="thumb-img"><img src="${info.image}" class=" item-thumb"></div>`
   
     //8. stampa codice
-    imageWrapper.innerHTML += `<img src="${info.image}" class= " item hide"><span>${info.title}</span>`;
+    imageWrapper.innerHTML += `<img src="${info.image}" class= " item hide">`;
+    
   })
 }
 

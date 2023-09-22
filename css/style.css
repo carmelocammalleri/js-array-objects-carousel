@@ -95,8 +95,15 @@
   opacity: 1;
 }
 
-.absolute{
+.info {
   position: absolute;
-  bottom: 10px;
-  right: 50%;
+  width: 79%;
+  color: white;
+  text-align: end;
+  bottom: 15px;
+}
+
+.info .title {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
