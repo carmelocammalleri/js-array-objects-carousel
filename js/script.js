@@ -10,7 +10,7 @@ const thumbNail = document.querySelector('.thumb')
 const listImages = [
   {
     image: 'img/01.webp',
-    title: 'Marvel\'s Spiderman Miles Morale',
+    title: 'Marvel\'s Spiderman Miles Morales',
     text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
 }, {
     image: 'img/02.webp',
@@ -37,16 +37,14 @@ printImg ()
 
 //4. inserire img dentro html
 function printImg (){
-  listImages.forEach((wepb)=>{
+  listImages.forEach((info)=>{
 
     // 7.condizioni bonus
-    thumbNail.innerHTML += `<div class="thumb-img"><img src="${wepb.image}" class=" item-thumb"></div>`
+    thumbNail.innerHTML += `<div class="thumb-img"><img src="${info.image}" class=" item-thumb"></div>`
   
     //8. stampa codice
-    imageWrapper.innerHTML += `<img src="${wepb.image}" class= " item hide">`;
+    imageWrapper.innerHTML += `<img src="${info.image}" class= " item hide"><span>${info.title}</span>`;
   })
-    
-
 }
 
 //6.
@@ -56,7 +54,6 @@ itemHide[counter].classList.remove('hide');
 
 btnDown.addEventListener('click', function (){
   itemHide[counter].classList.add('hide');
-  
   counter++;
   if(counter === itemHide.length){
     counter=0
@@ -67,7 +64,6 @@ btnDown.addEventListener('click', function (){
 
 btnUp.addEventListener('click', function(){
   itemHide[counter].classList.add('hide');
-
   if(counter === 0){
     counter= itemHide.length
   }

@@ -94,3 +94,9 @@
   border: 1.5px solid white;
   opacity: 1;
 }
+
+.absolute{
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+}
