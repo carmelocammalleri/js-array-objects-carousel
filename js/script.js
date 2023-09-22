@@ -1,8 +1,8 @@
 // 2. collegare elementi html/js
 const imageWrapper = document.querySelector('.image-wrap');
+const infoGames= document.getElementById('info');
 const btnUp = document.querySelector('.arrow-up');
 const btnDown = document.querySelector('.arrow-down');
-const infoGames= document.getElementById('info');
 
 // bonus
 const thumbNail = document.querySelector('.thumb')
@@ -39,47 +39,48 @@ printImg ()
 //4. inserire img dentro html
 function printImg (){
   listImages.forEach((info)=>{
-
-    infoGames.innerHTML +=
-    `<span class="title">${info.title}</span>
-    <br>
-    <span>${info.text}</span>`
-
+    
     // 7.condizioni bonus
     thumbNail.innerHTML += `<div class="thumb-img"><img src="${info.image}" class=" item-thumb"></div>`
-  
+    
     //8. stampa codice
     imageWrapper.innerHTML += `<img src="${info.image}" class= " item hide">`;
+    
+    infoGames.innerHTML +=
+        `<div class="text hide">
+          <h3>${info.title}</h3>
+          <span>${info.text}</span>
+        </div>
+        `;
   })
 }
 
 //6.
 const itemHide = document.getElementsByClassName('item');
+const textInfo = document.getElementsByClassName('text');
 itemHide[counter].classList.remove('hide');
+textInfo[counter].classList.remove('hide');
 
-const infoTextGame = document.getElementsByClassName('text')
-infoTextGame[counter].classList.add('hide');
-
+console.log(textInfo[counter]);
 btnDown.addEventListener('click', function (){
-
   itemHide[counter].classList.add('hide');
-  
+  textInfo[counter].classList.add('hide');
   counter++;
   if(counter === itemHide.length){
     counter=0
   }
-  infoTextGame[counter].classList.remove('hide');
-  
   itemHide[counter].classList.remove('hide');
+  textInfo[counter].classList.remove('hide');
 })
 
 btnUp.addEventListener('click', function(){
   itemHide[counter].classList.add('hide');
+  textInfo[counter].classList.add('hide');
   if(counter === 0){
     counter= itemHide.length
   }
   counter--;
   
   itemHide[counter].classList.remove('hide');
-
+  textInfo[counter].classList.remove('hide');
 })
