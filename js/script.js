@@ -68,6 +68,7 @@ btnDown.addEventListener('click', downer)
 btnUp.addEventListener('click', upper)
 
 function downer (){
+
   itemHide[counter].classList.add('hide');
   active[counter].classList.remove('active');
   textInfo[counter].classList.add('hide');
@@ -78,7 +79,9 @@ function downer (){
   itemHide[counter].classList.remove('hide');
   active[counter].classList.add('active');
   textInfo[counter].classList.remove('hide');
-}
+
+ };
+
 
 function upper (){
   itemHide[counter].classList.add('hide');
@@ -97,4 +100,4 @@ function upper (){
   clearInterval(play);
 }
 
-const play= setInterval(downer, 5000);
+  const play= setInterval(downer, 3000);
