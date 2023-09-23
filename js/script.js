@@ -63,30 +63,36 @@ itemHide[counter].classList.remove('hide');
 active[counter].classList.add('active');
 textInfo[counter].classList.remove('hide');
 
-console.log(textInfo[counter]);
-btnDown.addEventListener('click', function (){
+btnDown.addEventListener('click', downer)
+
+btnUp.addEventListener('click', upper)
+
+function downer (){
   itemHide[counter].classList.add('hide');
   active[counter].classList.remove('active');
   textInfo[counter].classList.add('hide');
   counter++;
   if(counter === itemHide.length){
-    counter=0
+    counter = 0
   }
   itemHide[counter].classList.remove('hide');
   active[counter].classList.add('active');
   textInfo[counter].classList.remove('hide');
-})
+}
 
-btnUp.addEventListener('click', function(){
+function upper (){
   itemHide[counter].classList.add('hide');
   active[counter].classList.remove('active');
   textInfo[counter].classList.add('hide');
+
   if(counter === 0){
-    counter= itemHide.length
+    counter = itemHide.length
   }
   counter--;
   
   itemHide[counter].classList.remove('hide');
   active[counter].classList.add('active');
   textInfo[counter].classList.remove('hide');
-})
+}
+
+setInterval(upper, 5000)

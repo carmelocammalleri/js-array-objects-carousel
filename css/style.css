@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: coral;
+  background-color:rgb(4, 77, 77);
 }
 
 .container {
@@ -92,7 +92,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .5;
+  opacity: .4;
 }
 
 
