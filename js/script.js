@@ -93,6 +93,8 @@ function upper (){
   itemHide[counter].classList.remove('hide');
   active[counter].classList.add('active');
   textInfo[counter].classList.remove('hide');
+
+  clearInterval(play);
 }
 
-setInterval(upper, 5000)
+const play= setInterval(downer, 5000);
